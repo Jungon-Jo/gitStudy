@@ -1,0 +1,51 @@
+<!-- src/main/resources/templates/board.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>게시판</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+<h1>📄 게시판 목록</h1>
+<div style="align-content: center">
+  <div style="width: 70%">
+    <table border="1" id="boardTable">
+      <thead>
+      <tr>
+        <th>아이디</th>
+        <th>제목</th>
+        <th>내용</th>
+        <th>작성자</th>
+        <th>작성일자</th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <div style="width: 70%">
+    <ul id="pagingNum"></ul>
+  </div>
+</div>
+<script src="/js/paging.js"></script>
+</body>
+</html>

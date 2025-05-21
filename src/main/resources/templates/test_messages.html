@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Messages</title>
+</head>
+<body>
+<h1>에러 메시지 목록</h1>
+<ul>
+    <li th:text="${messages['error.bad_request']}"></li>
+    <li th:text="${messages['error.unauthorized']}"></li>
+    <li th:text="${messages['error.not_found']}"></li>
+    <li> <form action="/board" method="get"><button type="submit">게시판으로 가기</button></form></li>
+</ul>
+</body>
+</html>
