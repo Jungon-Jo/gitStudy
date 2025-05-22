@@ -1,0 +1,71 @@
+example of using namespace :
+    feature/    : 새로운 기능 개발 브랜치
+    bugfix/     : 버그 수정 브랜치
+    hotfix/     : 긴급 배포용 수정 브랜치
+    release/    : 배포 준비용 브랜치
+    test/       : 테스트용 브랜치
+    refactor/   : 리펙토링 브랜치(기능 변화 없이 구조 변경 등)
+
+// git repository에서 작업 파일 가져오기
+git clone "git address"
+
+// local(main branch)에서 local(develop branch)로 생성 및 전환
+// checkout     : 브랜치 전환 및 파일/커밋 복원 코드
+// -b           : 신규 브랜치 생성
+git checkout -b develop(git branch develop)
+
+// git branch 신규 생성 (local 개발이 진행될 브랜치)
+git branch jungon
+
+// 신규 생성된 브랜치로 이동
+git switch jungon
+
+// local에서 신규 생성된 브랜치와 동일 이름의 remote 브랜치 생성
+git push origin jungon
+
+-> 파일 수정
+
+// 수정 및 신규 개발 사항 staging
+git add .
+
+// 수정 및 신규 개발 사항 commit
+git commit -m "message"
+
+// push 전 remote develop branch가 변경될 경우 아래 과정 필요
+git switch develop
+git pull origin develop
+git switch jungon
+git merge develop
+
+// 새롭게 merge된 내용이 있을 경우 다시 commit
+git add .
+git commit -m "message"
+
+// local jungon branch 작업 내용을 remote jungon branch로 push
+git push origin jungon
+
+// gitLab에서 jungon -> develop으로 PR
+create pull request(gitLab)
+
+// 새로 개발 시작 전
+git switch develop
+
+// remote에 변경사항이 있는지 확인을 위한것이며, local에는 여향을 주지 않는다.
+git fetch
+
+git pull origin develop
+git switch jungon
+git merge develop
+
+-> 파일 수정
+
+git add .
+git commit -m "message"
+git switch develop
+git pull origin develop
+git switch jungon
+git merge develop
+git add .
+git commit -m "message"
+git push origin jungon
+create pull request
