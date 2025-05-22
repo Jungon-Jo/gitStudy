@@ -82,11 +82,11 @@ function openFirstPage(firstPage, numPerPage) {
 }
 
 function lastPage() {
-
+    console.log("gitTest")
 }
 
 function afterPage() {
-
+    console.log("gitTest1")
 }
 
 function beforePage() {
