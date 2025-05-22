@@ -1,0 +1,70 @@
+--------------------------------------------------------------------------------------------
+저장소 설정 및 초기화
+// Git 초기화
+git init
+
+// 원격 저장소 연결
+git remote add origin <url>
+
+// 연결된 원격 저장소 확인
+git remote -v
+
+// 사용자 이름/이메일 global 설정(모든 git 파일에 적용)
+git config --global user.name "이름"
+git config --global user.email "이메일"
+
+// 사용자 이름/이메일 local 설정(global 보다 우선 적용)
+git config user.name "이름"
+git config user.email "이메일"
+--------------------------------------------------------------------------------------------
+기본 작업 흐름
+// 변경 사항 확인(local 변경사항 확인)
+git status
+
+// 파일 추가(Staging)
+git add 파일명 / git add .
+
+// 커밋 생성
+git commit -m "message"
+
+// 커밋 수정
+git commit --amend
+
+// 로컬 커밋 로그 확인
+git log / git log --oneline
+--------------------------------------------------------------------------------------------
+branch 관리
+// branch 병합(현재 브랜치로 <branchName>을 병합)
+git merge <branchName>
+
+// 커밋 재배시(rebase)
+git rebase <branchName>
+--------------------------------------------------------------------------------------------
+파일/커밋 복원 & 되돌리기
+// 스테이징 취소
+git reset HEAD 파일명
+
+// 마지막 커밋 취소(기록 유지)
+git restet --soft HEAD-1
+
+// 마지막 커밋 취소(스테이징도 취소)
+git reset --mixed HEAD-1
+
+// 마지막 커밋 완전 삭제
+git reset --hard HEAD-1
+
+// 파일 변경 내용 취소
+git checkout --파일명/git restore 파일명
+
+// 특정 커밋 체크아웃
+git checkout 커밋해시
+--------------------------------------------------------------------------------------------
+브랜치 비교 & 로그 확인
+// 브랜치 비교
+git diff <브랜치1> <브랜치2>
+
+// 스테이징된 내용 확인
+git diff --cached
+
+// 그래포 형태 로그
+git log --oneline --graph --all
