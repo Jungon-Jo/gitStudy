@@ -23,6 +23,12 @@ git switch jungon
 // local에서 신규 생성된 브랜치와 동일 이름의 remote 브랜치 생성
 git push origin jungon
 
+// local develop 브랜치와 jungon브랜치에 작업파일 내려받기
+git switch develop
+git pull origin develop
+git switch jungon
+git merge develop
+
 -> 파일 수정
 
 // 수정 및 신규 개발 사항 staging

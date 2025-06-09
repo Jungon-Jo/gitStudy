@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.utilmodel.mapper.Test_boardMapper">
+    <select id="selectAllBoard" resultType="com.utilmodel.VO.Test_boardVO">
+        SELECT id, title, content, writer, created_at AS createdAt
+        FROM board_posts
+        ORDER BY id ASC
+    </select>
+    <select id="selectPageBoard" resultType="com.utilmodel.VO.Test_boardVO" parameterType="int">
+        SELECT id, title, content, writer, created_at AS createdAt
+        FROM board_posts
+        ORDER BY id ASC
+        LIMIT #{pageSize} OFFSET #{startNum}
+    </select>
+    <select id="selectAllListCount" resultType="int">
+        SELECT COUNT(*)
+        FROM board_posts
+    </select>
+</mapper>
